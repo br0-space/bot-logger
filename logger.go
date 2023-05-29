@@ -2,9 +2,10 @@ package logger
 
 import (
 	"flag"
+	"sync"
+
 	"github.com/br0-space/bot-logger/live"
 	"github.com/br0-space/bot-logger/null"
-	"sync"
 )
 
 type Interface interface {
@@ -24,8 +25,10 @@ type Interface interface {
 	ResetExtraCallDepth()
 }
 
-var instance Interface
-var lock = &sync.Mutex{}
+var (
+	instance Interface
+	lock     = &sync.Mutex{}
+)
 
 func New() Interface {
 	lock.Lock()

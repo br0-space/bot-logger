@@ -2,9 +2,10 @@ package live
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/op/go-logging"
 	"github.com/spf13/pflag"
-	"os"
 )
 
 type Logger struct {
@@ -12,8 +13,10 @@ type Logger struct {
 	prefix        string
 }
 
-var defaultFormat = logging.MustStringFormatter(`%{color}%{time:2006-02-01 15:04:05.000} %{level}:%{color:reset} %{message}`)
-var verboseFormat = logging.MustStringFormatter(`%{color}%{time:2006-02-01 15:04:05.000} %{longfile} %{shortfunc} %{level}:%{color:reset} %{message}`)
+var (
+	defaultFormat = logging.MustStringFormatter(`%{color}%{time:2006-02-01 15:04:05.000} %{level}:%{color:reset} %{message}`)
+	verboseFormat = logging.MustStringFormatter(`%{color}%{time:2006-02-01 15:04:05.000} %{longfile} %{shortfunc} %{level}:%{color:reset} %{message}`)
+)
 
 func New() *Logger {
 	wrappedLogger := logging.MustGetLogger("")
@@ -123,6 +126,7 @@ func (l *Logger) getPrefix() string {
 	if l.prefix == "" {
 		return ""
 	}
+
 	return fmt.Sprintf("%s:", l.prefix)
 }
 
@@ -132,18 +136,18 @@ func (l *Logger) addPrefixToSlice(args ...interface{}) []interface{} {
 	}
 
 	x := args[0]
-	switch x.(type) {
-	case string:
+	if _, ok := x.(string); ok {
 		v := l.getPrefix()
 		args = append([]interface{}{v}, args...)
 	}
+
 	return args
 }
 
-func (l *Logger) addPrefixToString(string string) string {
+func (l *Logger) addPrefixToString(val string) string {
 	if l.getPrefix() == "" {
-		return string
+		return val
 	}
 
-	return fmt.Sprintf("%s %s", l.getPrefix(), string)
+	return fmt.Sprintf("%s %s", l.getPrefix(), val)
 }
