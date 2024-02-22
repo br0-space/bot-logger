@@ -6,30 +6,30 @@ func New() *Logger {
 	return &Logger{}
 }
 
-func (l *Logger) Debug(args ...interface{}) {}
+func (l *Logger) Debug(_ ...interface{}) {}
 
-func (l *Logger) Debugf(format string, args ...interface{}) {}
+func (l *Logger) Debugf(_ string, _ ...interface{}) {}
 
-func (l *Logger) Info(args ...interface{}) {}
+func (l *Logger) Info(_ ...interface{}) {}
 
-func (l *Logger) Infof(format string, args ...interface{}) {}
+func (l *Logger) Infof(_ string, _ ...interface{}) {}
 
-func (l *Logger) Warning(args ...interface{}) {}
+func (l *Logger) Warning(_ ...interface{}) {}
 
-func (l *Logger) Warningf(format string, args ...interface{}) {}
+func (l *Logger) Warningf(_ string, _ ...interface{}) {}
 
-func (l *Logger) Error(args ...interface{}) {}
+func (l *Logger) Error(_ ...interface{}) {}
 
-func (l *Logger) Errorf(format string, args ...interface{}) {}
+func (l *Logger) Errorf(_ string, _ ...interface{}) {}
 
-func (l *Logger) Panic(args ...interface{}) {}
+func (l *Logger) Panic(_ ...interface{}) {}
 
-func (l *Logger) Panicf(format string, args ...interface{}) {}
+func (l *Logger) Panicf(_ string, _ ...interface{}) {}
 
-func (l *Logger) Fatal(args ...interface{}) {}
+func (l *Logger) Fatal(_ ...interface{}) {}
 
-func (l *Logger) Fatalf(format string, args ...interface{}) {}
+func (l *Logger) Fatalf(_ string, _ ...interface{}) {}
 
-func (l *Logger) SetExtraCallDepth(depth int) {}
+func (l *Logger) SetExtraCallDepth(_ int) {}
 
 func (l *Logger) ResetExtraCallDepth() {}
