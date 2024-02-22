@@ -21,6 +21,7 @@ func TestNew(t *testing.T) {
 		it := tt
 		t.Run(it.name, func(t *testing.T) {
 			t.Parallel()
+
 			if got := logger.New(); !reflect.DeepEqual(got, it.want) {
 				t.Errorf("New() = %v, want %v", got, it.want)
 			}

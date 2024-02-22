@@ -127,7 +127,7 @@ func (l *Logger) getPrefix() string {
 		return ""
 	}
 
-	return fmt.Sprintf("%s:", l.prefix)
+	return l.prefix + ":"
 }
 
 func (l *Logger) addPrefixToSlice(args ...interface{}) []interface{} {
