@@ -8,6 +8,17 @@ A tiny logging helper for Go that gives you a sane default logger in application
 - Drop-in interface with familiar methods: Debug, Info, Warning, Error, Panic, Fatal and their formatted variants
 - Extra call depth helpers so log lines point to your code, not the wrapper
 
+## Status
+
+[![Build](https://github.com/br0-space/bot-logger/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/br0-space/bot-logger/actions/workflows/build.yml)
+[![Test](https://github.com/br0-space/bot-logger/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/br0-space/bot-logger/actions/workflows/test.yml)
+[![Lint](https://github.com/br0-space/bot-logger/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/br0-space/bot-logger/actions/workflows/lint.yml)
+[![Staticcheck](https://github.com/br0-space/bot-logger/actions/workflows/staticcheck.yml/badge.svg?branch=main)](https://github.com/br0-space/bot-logger/actions/workflows/staticcheck.yml)
+[![Vet](https://github.com/br0-space/bot-logger/actions/workflows/vet.yml/badge.svg?branch=main)](https://github.com/br0-space/bot-logger/actions/workflows/vet.yml)
+[![CodeQL](https://github.com/br0-space/bot-logger/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/br0-space/bot-logger/actions/workflows/codeql-analysis.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/br0-space/bot-logger.svg)](https://pkg.go.dev/github.com/br0-space/bot-logger)
+[![Go Report Card](https://goreportcard.com/badge/github.com/br0-space/bot-logger)](https://goreportcard.com/report/github.com/br0-space/bot-logger)
+
 ## Install
 
 ```
