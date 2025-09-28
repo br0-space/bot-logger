@@ -64,6 +64,26 @@ If you don’t use pflag, the defaults apply: INFO level with the standard forma
 
 When your code runs under "go test", logger.New() returns a null logger that discards output. This keeps your test logs clean without additional setup.
 
+## Runnable example
+
+A small example program is included to try the logger quickly from the command line.
+
+Run it with:
+
+```
+go run ./cmd/run_example.go
+```
+
+Useful flags:
+- --verbose to enable DEBUG level and extended format
+- --quiet to only show errors
+- --do-fatal to actually invoke Fatal (will exit the program)
+- --do-fatalf to actually invoke Fatalf (will exit the program)
+
+Notes:
+- The example triggers Panic and Panicf but immediately recovers so the program continues.
+- Fatal and Fatalf will terminate the program if enabled via the flags above.
+
 ## API
 
 The logger.Interface exposes the following methods:
