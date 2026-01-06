@@ -58,51 +58,51 @@ func New() *Logger {
 	return defaultLogger
 }
 
-func (l *Logger) Debug(args ...interface{}) {
+func (l *Logger) Debug(args ...any) {
 	l.wrappedLogger.Debug(l.addPrefixToSlice(args...)...)
 }
 
-func (l *Logger) Debugf(format string, args ...interface{}) {
+func (l *Logger) Debugf(format string, args ...any) {
 	l.wrappedLogger.Debugf(l.addPrefixToString(format), args...)
 }
 
-func (l *Logger) Info(args ...interface{}) {
+func (l *Logger) Info(args ...any) {
 	l.wrappedLogger.Info(l.addPrefixToSlice(args...)...)
 }
 
-func (l *Logger) Infof(format string, args ...interface{}) {
+func (l *Logger) Infof(format string, args ...any) {
 	l.wrappedLogger.Infof(l.addPrefixToString(format), args...)
 }
 
-func (l *Logger) Warning(args ...interface{}) {
+func (l *Logger) Warning(args ...any) {
 	l.wrappedLogger.Warning(l.addPrefixToSlice(args...)...)
 }
 
-func (l *Logger) Warningf(format string, args ...interface{}) {
+func (l *Logger) Warningf(format string, args ...any) {
 	l.wrappedLogger.Warningf(l.addPrefixToString(format), args...)
 }
 
-func (l *Logger) Error(args ...interface{}) {
+func (l *Logger) Error(args ...any) {
 	l.wrappedLogger.Error(l.addPrefixToSlice(args...)...)
 }
 
-func (l *Logger) Errorf(format string, args ...interface{}) {
+func (l *Logger) Errorf(format string, args ...any) {
 	l.wrappedLogger.Errorf(l.addPrefixToString(format), args...)
 }
 
-func (l *Logger) Panic(args ...interface{}) {
+func (l *Logger) Panic(args ...any) {
 	l.wrappedLogger.Panic(l.addPrefixToSlice(args...)...)
 }
 
-func (l *Logger) Panicf(format string, args ...interface{}) {
+func (l *Logger) Panicf(format string, args ...any) {
 	l.wrappedLogger.Panicf(l.addPrefixToString(format), args...)
 }
 
-func (l *Logger) Fatal(args ...interface{}) {
+func (l *Logger) Fatal(args ...any) {
 	l.wrappedLogger.Fatal(l.addPrefixToSlice(args...)...)
 }
 
-func (l *Logger) Fatalf(format string, args ...interface{}) {
+func (l *Logger) Fatalf(format string, args ...any) {
 	l.wrappedLogger.Fatalf(l.addPrefixToString(format), args...)
 }
 
@@ -130,7 +130,7 @@ func (l *Logger) getPrefix() string {
 	return l.prefix + ":"
 }
 
-func (l *Logger) addPrefixToSlice(args ...interface{}) []interface{} {
+func (l *Logger) addPrefixToSlice(args ...any) []any {
 	if l.getPrefix() == "" {
 		return args
 	}
@@ -138,7 +138,7 @@ func (l *Logger) addPrefixToSlice(args ...interface{}) []interface{} {
 	x := args[0]
 	if _, ok := x.(string); ok {
 		v := l.getPrefix()
-		args = append([]interface{}{v}, args...)
+		args = append([]any{v}, args...)
 	}
 
 	return args
